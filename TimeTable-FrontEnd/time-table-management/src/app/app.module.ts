@@ -3,14 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { FirebaseService } from './services/firebase.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './core/auth/auth.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,10 +23,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       appId: '1:462678147866:web:0ed9dbdef9aca59cf462a3',
     }),
     BrowserAnimationsModule,
-   
-
         FormsModule,
         ReactiveFormsModule,
+        HttpClientModule
 
   ],
   providers: [FirebaseService,AuthGuard],
