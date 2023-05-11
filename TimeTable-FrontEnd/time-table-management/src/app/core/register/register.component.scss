@@ -1,5 +1,65 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #8F43EE;
+}
+
+.register-form {
+  max-width: 400px;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
   }
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.error-toaster {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: purple;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+  color:purple;
+
+  &__icon {
+    color: currentColor;
+    margin-right: 10px;
+  }
+
+  &__message {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  &__close {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: currentColor;
+  }
+}

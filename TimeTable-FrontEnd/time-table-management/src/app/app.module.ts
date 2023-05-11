@@ -8,12 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './core/auth/auth.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatInputModule,
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyDEuAQnhNlvDyytnSIlrK7IL6C567H-QbU',
       authDomain: 'time-table-management-30d1c.firebaseapp.com',
@@ -25,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        MatSnackBarModule,
 
   ],
   providers: [FirebaseService,AuthGuard],
