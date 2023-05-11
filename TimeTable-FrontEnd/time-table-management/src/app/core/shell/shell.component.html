@@ -1,7 +1,20 @@
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 25%">
-  <h3 class="w3-bar-item">Menu</h3>
+<mat-drawer-container class="sidenav-container">
+  <mat-drawer #drawer class="sidenav" [opened]="opened" mode="side">
+    <mat-nav-list>
+      <mat-list-item *ngFor="let link of links">
+        <a matLine [routerLink]="[link.url]">{{ link.name }}</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
 
-  <a href="#" class="w3-bar-item w3-button">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button">Link 3</a>
-</div>
+  <div class="sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="toggleSidenav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>App Title</span>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

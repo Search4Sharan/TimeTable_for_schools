@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent {
+  opened = false;
 
+  links = [
+    { name: 'Home', url: '/app/landing-page' },
+    { name: 'View', url: '/view-page' },
+    { name: 'Edit', url: '/edit-page' },
+  ];
+
+  toggleSidenav() {
+    this.opened = !this.opened;
+  }
 }

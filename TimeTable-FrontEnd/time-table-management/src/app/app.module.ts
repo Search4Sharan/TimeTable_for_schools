@@ -10,6 +10,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
     BrowserModule,
     AppRoutingModule,
     MatInputModule,
+    MatSidenavModule,
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyDEuAQnhNlvDyytnSIlrK7IL6C567H-QbU',
       authDomain: 'time-table-management-30d1c.firebaseapp.com',
@@ -30,9 +37,14 @@ import { MatInputModule } from '@angular/material/input';
         ReactiveFormsModule,
         HttpClientModule,
         MatSnackBarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatListModule
 
   ],
   providers: [FirebaseService,AuthGuard],
   bootstrap: [AppComponent],
+  exports : [MatIconModule]
 })
 export class AppModule {}
